@@ -1,0 +1,64 @@
+@import "vars"
+
+*, :before, :after
+  box-sizing: border-box
+
+ul
+  list-style: none
+  padding: 0
+  margin: 0
+
+#app
+  font-family: Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: #2c3e50
+  margin: 60px 0
+
+.input
+  position: relative
+  height: 50px
+  display: flex
+  align-items: flex-end
+
+  & label
+    margin-right: 1rem
+    position: absolute
+    left: 10px
+    bottom: 5px
+    transition: all .3s
+
+    &.notEmpty
+      font-size: 10px
+      transform: translateY(-30px)
+
+  & input
+    border: none
+    border-bottom: 1px solid black
+    outline: none
+    padding: 5px 1rem
+    width: 100%
+    line-height: 30px
+    font-family: Avenir, Helvetica, Arial, sans-serif
+
+    &:focus
+      border-color: $select-color
+
+      & ~ label
+        font-size: 10px
+        transform: translateY(-30px)
+        color: $select-color
+
+    &.invalid
+      border-color: red
+
+  & input[type="date"]
+    font-size: 0
+    transition: font-size .3s
+    width: 100%
+
+    &:focus
+      font-size: 14px
+
+    &.notEmpty
+      font-size: 14px
